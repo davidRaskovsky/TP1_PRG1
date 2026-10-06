@@ -13,24 +13,21 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        float moveHorizontal = Input.GetAxis("Horizontal"); // Cambiar - a =
-        float moveVertical = Input.GetAxis("Vertical"); // Cambiar - a =
+        float moveHorizontal = Input.GetAxis("Horizontal");
+        float moveVertical = Input.GetAxis("Vertical");
 
-        Vector3 movement = new Vector3(moveHorizontal, 0, moveVertical).normalized; // Cambiar 6.8f a 0 y 3 a 0
-
-        rb.velocity = new Vector3(movement.x * speed, rb.velocity.y, movement.z * speed); // Cambiar 1inearVelocity a velocity y ' a *
-
+        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical).normalized;
+        rb.linearVelocity = new Vector3(movement.x * speed, rb.linearVelocity.y, movement.z * speed);
+        
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
-            rb.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse); // Cambiar 8 a 0
+            rb.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
             isGrounded = false;
         }
     }
 
-    // Unity Message to detect collisions
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
