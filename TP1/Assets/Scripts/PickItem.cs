@@ -8,18 +8,6 @@ public class PickItem : MonoBehaviour
   //  private GameObject itemInRange = null; // Guarda el ítem que tienes cerca
 
 
-  //  void Update()
-  //  {
-        // Si hay un ítem cerca, no tienes nada cargado, y presionas la E
-    //    if (itemInRange != null && currentItem == null)
-  //     {
- //           if (Input.GetKeyDown(KeyCode.E))
-  //          {
- //               Pick(itemInRange);
- //           }
- //       }
- //   }
-
    // private void OnTriggerEnter(Collider other)
     private void OnTriggerStay(Collider other)
     {
@@ -64,30 +52,7 @@ public class PickItem : MonoBehaviour
             return temp; 
     
     }
-            // 1. Separamos el objeto del jugador
-         //   temp.transform.SetParent(null);
             
-            // 2. Le devolvemos la gravedad al Rigidbody
-          //  Rigidbody rb = temp.GetComponent<Rigidbody>();
-           // if (rb != null) 
-           // { rb.isKinematic = false;                 
-                // CORRECCIÓN AQUÍ: Cambiamos rb.velocity por rb.linearVelocity para tu versión de Unity
-          //      rb.linearVelocity = Vector3.zero; 
-           // }
-            
-            // 3. ENCENDEMOS LOS DOS COLLIDERS AL MISMO TIEMPO
-          
-          /*
-            Collider[] todosLosColliders = temp.GetComponents<Collider>();
-            foreach (Collider col in todosLosColliders)
-            {
-                col.enabled = true; 
-            }
-            
-            currentItem = null; 
-            return temp;
-        }
-*/
 
         
     }

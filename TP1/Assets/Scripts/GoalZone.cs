@@ -20,7 +20,7 @@ private void OnTriggerEnter(Collider other)
                 {      
                        //si llega a la meta => victoria
                 
-                // Debug.Log("PERDISTE - LLEGASTE SIN EL ITEM");
+                
                  Debug.Log("GANASTE - NIVEL COMPLETADO");
                 ItemInZone(item);
                 } 
